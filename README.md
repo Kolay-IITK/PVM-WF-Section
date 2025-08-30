@@ -47,7 +47,6 @@ section WFSection2d $secTag $matTag $d $tw $bf $tf $nfw $nff -nd_shear $alpha
 -`-nd_shear` flag activates the parabolic shear strain distribution.  
 
 ## 📖 Reference
-[1] Saritas, A., & Filippou, F.C. (2009). *Fiber Beam–Column Element for Shear–Flexure Interaction in Reinforced Concrete Members.*  
-PEER Report 2009/104, Pacific Earthquake Engineering Research Center, UC Berkeley.  
+[1] Afsin Saritas and Filip C. Filippou. Frame Element for Metallic Shear-Yielding Members under Cyclic Loading. Journal of Structural Engineering, 135(9):1115–1123, September 2009. ISSN 0733-9445, 1943-541X.  URL https://ascelibrary.org/doi/10.1061/%28ASCE%29ST.1943-541X.0000041.
 
 ---
