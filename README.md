@@ -17,20 +17,37 @@ section WFSection2d $secTag $matTag $d $tw $bf $tf $nfw $nff -nd_shear $alpha
 
 | Argument           | Type    | Description                                                                  |
 | ------------------ | ------- | ---------------------------------------------------------------------------- |
-| `$secTag`          | Integer | Section tag identifier.                                                      |
-| `$matTag`          | Integer | Material tag for fibers.                                                     |
-| `$d`               | Float   | Section depth (overall height).                                              |
-| `$tw`              | Float   | Web thickness.                                                               |
-| `$bf`              | Float   | Flange width.                                                                |
-| `$tf`              | Float   | Flange thickness.                                                            |
-| `$numFibersWeb`    | Integer | Number of fibers across the web depth.                                       |
-| `$numFibersFlange` | Integer | Number of fibers in each flange region.                                      |
-| `-nd_shear $alpha` | Float   | Non-dimensional shear parameter:<br> `α = 2 * tf * bf / ((d - 2 * tf) * tw)` |
+| `$secTag`          | Integer | Section tag identifier                                                     |
+| `$matTag`          | Integer | Material tag for fibers                                                    |
+| `$d`               | Float   | Section depth (overall height)                                              |
+| `$tw`              | Float   | Web thickness                                                               |
+| `$bf`              | Float   | Flange width                                                               |
+| `$tf`              | Float   | Flange thickness                                                           |
+| `$nfw`    | Integer | Number of fibers across the web depth                                      |
+| `$nff` | Integer | Number of fibers in each flange region                                      |
+| `$alpha` | Float   | Non-dimensional shear parameter:<br> $\displaystyle \alpha = \frac{2 t_f b_f}{(d - 2 t_f) t_w}$ |
 
+## Example usage
+```tcl
+#Section dimensions
+set d   0.86
+set tw  0.028
+set bf  0.45
+set tf  0.045
 
+#Compute non-dimensional shear parameter
+set alpha [expr 2.0*$tf*$bf/(($d-2.0*$tf)*$tw)]
 
+#Define section
+section WFSection2d $secTag $matTag $d $tw $bf $tf $nfw $nff -nd_shear $alpha
+```
 
+##  Note
 
+-`-nd_shear` flag activates the parabolic shear strain distribution.  
 
+## 📖 Reference
+[1] Saritas, A., & Filippou, F.C. (2009). *Fiber Beam–Column Element for Shear–Flexure Interaction in Reinforced Concrete Members.*  
+PEER Report 2009/104, Pacific Earthquake Engineering Research Center, UC Berkeley.  
 
-
+---
