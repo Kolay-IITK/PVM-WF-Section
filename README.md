@@ -13,8 +13,6 @@ In this implementation:
 ## Usage
 To define a wide-flange steel section, use the following command:
 
-```tcl
-# Command format
 section WFSection2d $secTag $matTag $d $tw $bf $tf $nfw $nff -nd_shear $alpha
 
 | Argument           | Type    | Description                                                                  |
