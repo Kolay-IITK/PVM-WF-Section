@@ -1,4 +1,4 @@
-# P–V–M Interaction in Wide-Flange Steel Sections
+# PVM-WF-Section
 
 This repository contains the implementation of a 2-D fiber section in OpenSees to capture the interaction between **axial force (P)**, **shear (V)**, and **bending moment (M)** in wide-flange steel sections. It is based on the theoretical model proposed by **Saritas and Filippou (2009)**[1].
 
