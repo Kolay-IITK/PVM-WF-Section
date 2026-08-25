@@ -1,14 +1,13 @@
 # P-V-M-interaction-in-Wide-flange-steel-section
 
-This repository contains the implementation of a 2-D fiber section in OpenSees to capture the interaction between **axial force (P)**, **shear (V)**, and **bending moment (M)** in wide-flange steel sections. It is based on the theoretical model proposed by **Saritas and Filippou (2009)**[1].
-
-Unlike the existing OpenSees wide-flange section integration command, which assumes a **constant shear strain distribution** with a shear correction factor, this new implementation introduces a **parabolic shear strain distribution** across the web depth, providing improved accuracy for shear-flexure interaction. 
-In this implementation:
+This repository contains the implementation of a 2-D fiber section in OpenSees to capture the interaction between axial force (P), shear (V), and bending moment (M) for I-shaped rolled and built-up doubly symmteric steel cross-sections. It is based on the fiber section formulation proposed by Saritas and Filippou (2009)[1] with the simplified shear strain distribution given by Ding et al. (2018)[2].
 
 ---
 ## Key Features
-- Supports **multiaxial fibers** and is compatible with `forceBeamColumn` elements.  
-- Implements a **parabolic shear strain distribution** across the web and a consistent shear strain assumption in the flanges.   
+- Supports multiaxial fibers and is compatible with forceBeamColumn elements.  
+- Implements a constant shear strain distribution across the web and web-flange junction and another constant shear strain in the flanges which is a function of web shear strain, cross-sectional geometry, link length, and ultimate material strength.
+- Allows different material properties for the web and flange fibers.
+  
 ---
 ## Usage
 To define a wide-flange steel section, use the following command:
